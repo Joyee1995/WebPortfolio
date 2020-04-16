@@ -1,0 +1,504 @@
+@font-face {
+    font-family: Clip;
+    src: url("https://acupoftee.github.io/fonts/Clip.ttf");
+  }
+  @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+#wrapper{
+    height:900px;
+    width:100%;
+}
+.cover{
+    background-image: url(../img/alishan.gif);
+    background-size:cover;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    height:700px;
+    width:100%;
+    position: relative;
+}
+#navbar{
+    padding: .5rem 4rem;
+}
+
+.navbar.fixed_nav{
+    position: fixed;
+    /* bottom:0; */
+    top:0;
+    /* left:10px; */
+    width: 100%;  
+    z-index: 1;          
+}
+
+.Joyeeani{
+    /* color: #5c205c !important; */
+    /* background-image: radial-gradient(
+    ellipse 50% 35% at 50% 50%,
+    #6b1839,
+    transparent
+  ); */
+  /* transform: translate(-50%, -50%); */
+  /* letter-spacing: 2; */
+  /* left: 50%; */
+  /* top: 50%; */
+  font-family: "Clip";
+  text-transform: uppercase;
+  /* font-size: 13px; */
+  color: #5c0e5c !important;
+  /* text-shadow: 0 0 0.6rem #751f75, 0 0 1.5rem #ff65bd,
+    -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+    0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483; */
+  animation: shine 2s forwards, flicker 3s infinite;
+}
+
+@keyframes blink {
+    0%,
+    22%,
+    36%,
+    75% {
+      color: #521b52;
+      /* text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+        -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;*/
+    } 
+    28%,
+    33% {
+      color: #ff65bd;
+      text-shadow: none;
+    }
+    82%,
+    97% {
+      color: #ff2483;
+      text-shadow: none;
+    }
+  }
+  
+  .flicker {
+    animation: shine 2s forwards, blink 3s 2s infinite;
+  }
+  
+  .fast-flicker {
+    animation: shine 2s forwards, blink 10s 1s infinite;
+  }
+  
+  @keyframes shine {
+    0% {
+      color: #6b1839;
+      text-shadow: none;
+    }
+    100% {
+      color: #946384;
+      /* text-shadow: 0 0 0.6rem #946384, 0 0 1.5rem #ff65bd,
+        -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;*/
+    } 
+  }
+  
+  @keyframes flicker {
+    from {
+      opacity: 1;
+    }
+  
+    4% {
+      opacity: 0.9;
+    }
+  
+    6% {
+      opacity: 0.85;
+    }
+  
+    8% {
+      opacity: 0.95;
+    }
+  
+    10% {
+      opacity: 0.9;
+    }
+  
+    11% {
+      opacity: 0.922;
+    }
+  
+    12% {
+      opacity: 0.9;
+    }
+  
+    14% {
+      opacity: 0.95;
+    }
+  
+    16% {
+      opacity: 0.98;
+    }
+  
+    17% {
+      opacity: 0.9;
+    }
+  
+    19% {
+      opacity: 0.93;
+    }
+  
+    20% {
+      opacity: 0.99;
+    }
+  
+    24% {
+      opacity: 1;
+    }
+  
+    26% {
+      opacity: 0.94;
+    }
+  
+    28% {
+      opacity: 0.98;
+    }
+  
+    37% {
+      opacity: 0.93;
+    }
+  
+    38% {
+      opacity: 0.5;
+    }
+  
+    39% {
+      opacity: 0.96;
+    }
+  
+    42% {
+      opacity: 1;
+    }
+  
+    44% {
+      opacity: 0.97;
+    }
+  
+    46% {
+      opacity: 0.94;
+    }
+  
+    56% {
+      opacity: 0.9;
+    }
+  
+    58% {
+      opacity: 0.9;
+    }
+  
+    60% {
+      opacity: 0.99;
+    }
+  
+    68% {
+      opacity: 1;
+    }
+  
+    70% {
+      opacity: 0.9;
+    }
+  
+    72% {
+      opacity: 0.95;
+    }
+  
+    93% {
+      opacity: 0.93;
+    }
+  
+    95% {
+      opacity: 0.95;
+    }
+  
+    97% {
+      opacity: 0.93;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
+
+
+
+.slogan{
+    background-color:rgba(256,256,256,0.2);
+    position:relative;
+    width:506px;
+    left:556px;
+    top:142px;
+    margin:0;
+    padding-top: 40px;
+    
+}
+
+#slogan2{
+    position:relative;
+    display:inline;
+    font-size:48px;
+    font-family: fantasy;
+    font-weight: 900;
+    color:white;
+    /* width:100%; */
+    margin:0;
+    padding:0;
+}
+#textcenter{
+    text-align: center;
+}
+
+#typewriter{
+    color:#fff;
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Anonymous Pro', monospace;
+}
+
+.main{
+    background-color: rgba(3, 3, 3, 0.863);
+}
+.pt-4{
+    padding-top: 1.5rem!important;
+}
+
+.container{
+    /* height:800px;
+    width: 100%; */
+    /* background-color: lightgray; */
+    /* background-color: white; */
+    box-shadow: 0 0 8px 8px rgb(190, 188, 188);
+    background-image: url(/img/wallpaper.jpeg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    position:relative;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: PT Sans Caption,sans-serif;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    margin-left: -10px;
+}
+
+.col-md-9{
+    -webkit-box-flex: 0;
+    flex: 0 0 75%;
+    max-width: 75%;
+    position: relative;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.col-md-6{
+    -webkit-box-flex: 0;
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.col-md-3{
+    -webkit-box-flex: 0;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.ml-auto{
+    margin-left: auto!important;
+}
+
+.card{
+    /* border-bottom: 1px solid rgba(0,0,0,0.5); */
+    padding: 10px;
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: transparent;
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: 0;
+}
+
+.mb-4{
+    margin-bottom: 1.5rem!important;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.card-header{
+    padding: .75rem 1.5rem;
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 0 solid rgba(0,0,0,.125);
+}
+
+a{
+    text-decoration: none;
+    background-color: transparent;
+    color:inherit;
+
+}
+
+.card-title{
+    margin-bottom: .75rem;
+}
+
+.card-img{
+    position: relative;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* .card-img::after{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: opacity 0.3s ease-in-out;
+
+} */
+
+.card-img:hover {
+    transform: scale(1.05, 1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  }
+
+/* .card-img:hover::after {
+    opacity: 2;
+  } */
+
+.card-body{
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    padding: 1.5rem;
+}
+
+.card-text{
+    margin-bottom: 0;
+}
+
+.col-md-3{
+    -webkit-box-flex: 0;
+    flex: 0 0 25%;
+    max-width: 25%;
+    position: relative;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#sidebar{
+   /* background-image: url(/img/aside.jpg); 
+  background-size:cover;
+  background-repeat: no-repeat;  */
+  /* box-shadow: 0 0 8px 8px rgb(190, 188, 188) inset; */
+  background-color: rgba(256,256,256,0.3);
+}
+
+
+.dowebok {
+    width: 8rem;
+    height: 8rem;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin: 5px auto;
+    padding: 1rem;
+    position: relative;
+    box-shadow:
+        0 0 0 4px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 3px #EEE,
+        inset 0 0 10px #000,
+        0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dowebok-face {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: url('../img/ios_clock.svg') center no-repeat;
+    transform: translateY(-3px);
+}
+
+.hand {
+    width: 40%;
+
+    height: 6px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1)
+}
+
+
+.dowebok .hour {
+    width: 26%;
+    height: 5px;
+    border-radius: 50%;
+    left: 26%;
+    position: absolute;
+}
+
+.dowebok .second {
+    position: absolute;
+    height: 3px;
+    width: 50%;
+    transform-origin: 90%;
+    right: 45%;
+    position: absolute;
+}
+
+.dowebok .minute {
+    border-radius: 50%;
+}
+
+.center {
+    position: absolute;
+    width: 0.5rem;
+    background: black;
+    z-index: 8;
+    height: 0.5rem;
+    border-radius: 50%;
+    top: 48.5%;
+    left: 48%;
+}
+
+.h6{
+    font-size: .875rem;
+    margin-bottom: .5rem;
+    font-family: "PT Serif",serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+.mb-42{
+    margin-bottom: 1.5rem!important;
+}

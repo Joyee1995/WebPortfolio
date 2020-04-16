@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Coiny');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+
+/* Tiny reset thingy */
+body,html{margin:0;padding:0;font-family: 'Indie Flower', cursive;}
+
+.wrapper {
+  /* The height needs to be set to a fixed value for the effect to work.
+   * 100vh is the full height of the viewport. */
+  height: 100vh;
+  /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
+  overflow-x: hidden;
+  /* Enable scrolling on the page. */
+  overflow-y: auto;
+  /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
+  perspective: 2px;
+  background-color: black;
+}
+
+
+
+
+
+
+.section {
+  /* Needed for children to be absolutely positioned relative to the parent. */
+  position: relative;
+  /* The height of the container. Must be set, but it doesn't really matter what the value is. */
+  height: 100vh;
+  
+  /* For text formatting. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0 0 5px #000;
+}
+
+ .silence{
+position: absolute;
+left: 20%;
+transform: rotate(-31deg);
+bottom: 65%;
+}
+  
+.silence:hover{
+  font-size: 40px;
+  background-image: linear-gradient(to right,rgb(170, 132, 51),rgb(180, 173, 107));
+  box-shadow: 0 0 20px 10px rgb(63, 61, 66)inset;
+  
+}
+
+.section2 {
+    /* Needed for children to be absolutely positioned relative to the parent. */
+    position: relative;
+    /* The height of the container. Must be set, but it doesn't really matter what the value is. */
+    height: 70vh;
+    
+    /* For text formatting. */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    color: white;
+    text-shadow: 0 0 5px #000;
+  }
+/* .card-image{
+    height:400px;
+    width:200px;
+} */
+
+/* .staticp{
+  /* font-size: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px; */
+  /* height: 100%; */
+  /* color: antiquewhite;
+  border: dashed antiquewhite 2px; */
+  /* position: relative; */
+  /* background-image: url(/img/marbleblack.jpg);
+  background-size: cover; */
+  /* filter: blur(1px); */
+  /* -webkit-filter: blur(1px); */
+
+/* }  */
+
+.bg-text{
+  font-size: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: antiquewhite;
+  border: dashed antiquewhite 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  /* font-family: 'Indie Flower', cursive; */
+  font-family: 'Caveat', cursive !important;
+
+}
+
+.bg-text2{
+  font-size: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: antiquewhite;
+  /* background-color: rgba(250, 250, 250,0.5); */
+  /* border: dashed antiquewhite 2px; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  /* font-family: 'Indie Flower', cursive; */
+  font-family: 'Caveat', cursive !important;
+
+}
+
+.parallax::after {
+  /* Display and position the pseudo-element */
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+  /* Move the pseudo-element back away from the camera,
+   * then scale it back up to fill the viewport.
+   * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+  transform: translateZ(-1px) scale(1.5);
+  /* Force the background image to fill the whole element. */
+  background-size: 100%;
+  /* Keep the image from overlapping sibling elements. */ 
+  z-index: -1;
+}
+
+/* The styling for the static div. */
+.static {
+  background: rgb(31, 29, 29,0.9);
+  box-shadow: 0 0 20px 10px rgb(95, 87, 87) inset;
+  background-image: url(/img/tree.png);
+  background-size: 40%;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  /* opacity: 0.7; */
+}
+
+.static2 {
+  background: rgb(31, 29, 29,0.8);
+  background-image: url(/img/marbleblack.jpg);
+  background-size: cover;
+  box-shadow: 0 0 20px 10px rgb(95, 87, 87) inset;
+  opacity:0.8;
+  
+}
+
+/* Sets the actual background images to adorable kitties. This part is crucial. */
+.bg1::after {
+  background-image: url('/img/IMG_0094.JPG');
+  background-size: cover;
+}
+
+.bg2::after {
+    background: url('/img/IMG_4382flip.JPG'), url('/img/IMG_4382.JPG');
+    /* , url('/img/IMG_4382.JPG') left  contain no-repeat  */
+    background-size: 50%;
+    background-position: right, left;
+    background-repeat: no-repeat;
+    /* filter: blur(1px);
+  -webkit-filter: blur(1px); */
+  
+}
+
+.bg3::after {
+    background-image: url('/img/IMG_0215.JPG');
+    
+    /* background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; */
+  }

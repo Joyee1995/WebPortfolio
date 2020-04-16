@@ -1,0 +1,300 @@
+body{
+    margin:0
+}
+
+
+
+.wrapper{
+    /* display:block; */
+    margin:0;
+    padding:0;
+    width:100%;
+    background-color: #333333;
+}
+
+.wrapper .whole{
+    margin: 0 auto;
+    width:960px;
+    height: 75px;
+    /* display:block; */
+    padding: 30px 0;
+
+}
+
+.clear{
+    clear: both;
+}
+
+.wrapper .whole .left{
+    color:#C0BAB6;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    display:block;
+    margin:0;
+    padding:0;
+    float:left;
+
+}
+
+.leftbox1{
+    margin:0;
+    padding:0;
+}
+
+.leftbox2{
+    font-size: 13px;
+}
+.clear{
+    clear:both;
+}
+
+.c1{
+    display:block;
+    float:right;
+    /* position: absolute;
+    right: 50px */
+    /* margin: 0 0 0 0; */
+    padding:20px 0;
+    background-color:#232323;
+}
+
+.c2{
+    margin: 0;
+    list-style: none;
+    display:block;
+}
+
+.c3{
+    display: inline;
+    margin-right: 25px;
+}
+
+.c4{
+    text-decoration: none;
+    color:#C0BAB6;
+    font-size: 13px;
+}
+
+.row2{
+    background-color:white;
+}
+
+.container{
+    margin:0 auto;
+    padding:30px 0;
+    width:960px;
+    display:block;
+}
+
+.section1{
+    margin: 0 0 30px 0;
+    padding:0;
+    display:block;
+    background-image: url(alishan.jpg);
+
+}
+
+
+.below{
+    display:block;
+    height:300px;
+    background-color: rgb(256, 256, 256);
+    padding:0 0 30px 0;
+    margin:0;
+
+}
+
+.col3{
+    background-color: white;
+    display:block;
+    width: 31.333%;
+    height:180px;
+    margin-left: 3%;
+}
+
+.left{
+    float:left;
+    margin-left: 0;
+}
+
+.middle{
+    float:left;
+}
+
+.right{
+    float:right;
+}
+
+.clear{
+    clear:both;
+}
+
+.bottom{
+    width: 100%;
+    height: 100%;
+   
+}
+
+.textb{
+    font-style: italic;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(109, 104, 104);
+    margin: 13px 0 0 0;
+}
+
+.textc{
+    font-size: 13px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(109, 104, 104);
+    margin: 13px 0;
+}
+
+.more{
+    text-align:right;
+    
+}
+
+.more a{
+    text-decoration: none;
+    color: #FF9900;
+}
+
+figcaption{
+    display:block;
+    margin:0;
+    padding:0;
+    height:100px;
+}
+
+.last{
+    
+        display:block;
+        height:250px;
+        background-color: white;
+        padding:0;
+        margin:0;
+    
+    }
+
+.col2{
+        background-color: white;
+        display:block;
+        width: 48.5%;
+        height:250px;
+        margin-left: 3%;
+    }
+.left{
+        float:left;
+        margin-left: 0;
+    }
+
+h2{
+        font-style: italic;
+        color: #979797;
+        font-size: 32px;
+
+    }
+    
+p{
+        font-size: 13px;
+        color: #979797;
+        display: block;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+.row3{
+    background-color: #333333;
+}
+
+.whole2{
+    margin: 0 auto;
+    width:960px;
+    height: 200px;
+    display:block;
+    padding: 0 0 30px 0;
+    background-color: #333333;
+
+}
+
+.c5{
+    margin:0;
+    display:block;
+    /* background-attachment: blue; */
+
+}
+
+.col4{
+    background-color: #333333;
+    display:block;
+    width: 23.5%;
+    /* height:px; */
+    margin-left: 2%;
+}
+.left{
+    float:left;
+    margin-left: 0;
+}
+
+.c6{
+    display:block;
+    list-style:none;
+    text-decoration: none;
+    /* color: blue; */
+    text-align: left;
+    padding:0;
+    margin-top: 0;
+
+}
+
+h2{
+    margin: 25px 0 25px 0;
+    padding:0;
+    color: #ffffff;
+    /* background-color: black; */
+    font-size: 12px;
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+.c7{
+    margin: 0 0 5px 0;
+    padding: 0 0 5px 0;
+    border-bottom:1px solid #555555;
+}
+
+.c7 a{
+    color: #ff9900;
+    background-color: #333333;
+    font-size: 12px;
+}
+
+.row4{
+    background-color:#232323 ;
+}
+
+.whole3{
+
+    margin: 0 auto;
+    width:960px;
+    height: 20px;
+    display:block;
+    padding: 20px 0;
+    font-size: 13px;
+
+}
+
+.boxbl{
+    display:block;
+    float:left;
+    color:#919191;
+
+}
+
+.boxbr{
+    display:block;
+    float:right;
+    color:#919191;
+}

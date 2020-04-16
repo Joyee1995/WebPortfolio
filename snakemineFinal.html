@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/snakemine.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/js/jquery-ui.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+   
+    
+</head>
+<body>
+    <h1>Snake on a Game</h1>
+    <div id='div1'>
+        <div class='btn-group'>
+        <button id='easy' type="button" class="btn btn-success " data-size="100">Easy</button>
+        <button id='medium' type="button" class="btn btn-warning " data-size="60">Medium</button>
+        <button id='hard' type="button" class="btn btn-danger" data-size="30">Hard</button>
+        <i class='selectLevel fas fa-arrow-alt-circle-left' style='font-size:36px;color:white'></i>
+        </div>
+        
+        
+    <canvas id='canvas' width="450" height="450"></canvas> 
+    <div id="dialog-confirm" title="Game Over">
+        <p id='dialogp'><span class="fas fa-skull-crossbones" style="font-size:24px; float:left; margin: 0 10px 0 50px;"></span>TRY AGAIN?<span class="fas fa-skull-crossbones" style="font-size:24px; float:right; margin: 0 50px 0 10px;"></span></p>
+      </div>
+      <div id="dialog-confirm2" title="Dear Beloved Player">
+        <p id='dialogp'><span class='far fa-grin' style='font-size:36px;float:left; margin: 0 10px 0 50px;color:brown'></span>ARE YOU READY?</p><p>   Please select a level to challenge.</p>
+    </div> 
+    <button id='score' type="button" class="btn btn-secondary disabled">Score:</button>
+    <!-- <button id='restart' type="button" class="btn btn-secondary">RESTART</button> -->
+    
+    </div>
+    <script>
+        $(document).ready(function () { 
+        var canvas=$('#canvas')[0];
+        var context=canvas.getContext('2d');
+        var width=$('#canvas').width();
+        var height=$('#canvas').height();
+        var cellSize=15;
+        var direction;
+        var snake_food;
+        var userscore;
+        var snakeArray;
+        var speed=100;
+        var selectButton;
+        // var gameloop;
+
+        // $(".btn").click(function(){
+        //         var size=$(this).data('size');
+        //         $(this).addClass('active').siblings().removeClass('active');
+        //         speed=parseInt(size)
+        //         start();
+                
+        //     });
+        
+        
+            // $(".btn").dblclick(function(){
+            // function restartToggle(){
+            selectButton=setInterval(function(){
+            $(".selectLevel").toggle();
+            },1000)
+        // }
+            // })
+
+            // $('#restart').click(function(){
+            //     restart();
+            // })
+
+            function restart(){
+            $(".btn").click(function(){
+                // selectButton=setInterval(function(){
+                // $(".selectLevel").toggle();
+                // },1000)
+                var size=$(this).data('size');
+                $(this).addClass('active').siblings().removeClass('active');
+                speed=parseInt(size)
+                start();
+                
+            });
+        }
+            
+            
+
+
+        function selectLevel(){
+            $( "#dialog-confirm2" ).dialog({
+                resizable: false,
+                height: "auto",
+                width: 400,
+                modal: true,
+                buttons: {
+                  "Ok": function() {
+                    $( this ).dialog( "close" );
+                    // selectButton=setInterval(function(){
+                    // $(".selectLevel").toggle();
+                    // },1000)
+                    restart();
+                    
+            
+                    
+                    // restartToggle();
+                  },
+                  Cancel: function() {
+                    $( this ).dialog( "close" );
+                  }
+                }                              
+              });
+
+
+        }
+
+
+
+
+        // $('#easy').on('click',function(){
+        //     // $('#easy').addClass('active')
+        //     speed=100
+        // });
+        // $('#medium').on('click',function(){
+        //     // $('#medium').addClass('active')
+        //     speed=60
+        // });
+        // $('#hard').on('click',function(){
+        //     // $('#hard').addClass('active')
+        //     speed=30
+        // });
+
+        
+
+        function start(){
+            // gameloop==true;
+            clearInterval(selectButton)
+            direction = 'right';
+            createSnake(); 
+            createFood();
+            userscore=0;
+            
+            
+            
+            if (typeof gameloop != "undefined") clearInterval(gameloop);
+            gameloop=setInterval(snakeStart,speed)
+            
+            
+                
+            }
+        // function restart(){
+        //     gameloop=setInterval(snakeStart,speed)
+        //     start();
+        // }
+         
+            
+
+            
+        selectLevel();
+        // clearInterval(selectButton);
+        restart();
+        // if(gameloop==false) clearInterval(gameloop)
+
+        function createSnake(){
+            var snakeSize=6;
+            snakeArray=[];
+            for(var m=0; m<snakeSize-1;m++){
+                snakeArray.push({x:0,y:20})
+            }
+        };
+
+        function createFood(){
+            snake_food={
+                x:Math.round(Math.random()*(width-cellSize)/cellSize),
+                y:Math.round(Math.random()*(height-cellSize)/cellSize)
+            }
+        }
+
+        function snakeStart(){
+            
+            context.fillStyle = 'rgba(0, 0, 0, 0.7)';  
+            context.fillRect(0, 0, width, height);  
+            // context.strokeStyle = "0000ff";  
+            // context.strokeRect(0, 0, width, height); 
+
+            var snakeHeadX=snakeArray[0].x;
+            var snakeHeadY=snakeArray[0].y;
+
+            if(direction=='right')snakeHeadX++;
+            else if(direction=='left')snakeHeadX--;
+            else if(direction=='down')snakeHeadY++;
+            else if(direction=='up')snakeHeadY--;
+
+            if(snakeHeadX==-1||snakeHeadY==-1||snakeHeadX==(width/cellSize)||snakeHeadY==(height/cellSize)||collision(snakeHeadX,snakeHeadY,snakeArray)){
+                // gameloop==false;
+                clearInterval(gameloop)
+                selectButton=setInterval(function(){
+                    $(".selectLevel").toggle();
+                    },1000)
+                // gameloop==true;
+                $( "#dialog-confirm" ).dialog({
+                resizable: false,
+                height: "auto",
+                width: 400,
+                modal: true,
+                buttons: {
+                  "Replay": function() {
+                    $( this ).dialog( "close" );
+                    selectLevel();
+                  },
+                  Cancel: function() {
+                    $( this ).dialog( "close" );
+                  }
+                }                              
+              });
+
+                // start();
+                // return;
+            }
+            if(snakeHeadX==snake_food.x&&snakeHeadY==snake_food.y){
+                var snake_tail={x:snakeHeadX,y:snakeHeadY};
+                userscore++;
+                createFood();
+            }else{
+                var snake_tail=snakeArray.pop()
+                snake_tail.x=snakeHeadX;
+                snake_tail.y=snakeHeadY;
+            }
+
+            var currentscore='Score:'+userscore;
+            $('#score').text(currentscore)
+
+            snakeArray.unshift(snake_tail);
+            for (var i = 0; i < snakeArray.length; i++) {  
+                    var k = snakeArray[i];  
+                    console.log(k)
+                    paintSnake(k.x, k.y);  
+                }  
+            paintFood(snake_food.x,snake_food.y)
+
+        }
+
+        function paintSnake(x,y){
+            context.fillStyle='black';
+            context.fillRect(x*cellSize,y*cellSize,cellSize,cellSize);
+            context.strokeStyle='#ffa500';
+            context.strokeRect(x*cellSize,y*cellSize,cellSize,cellSize);
+        }
+        function paintFood(x,y){
+            context.fillStyle='#a14419';
+            context.fillRect(x*cellSize,y*cellSize,cellSize,cellSize);
+            context.strokeStyle='#ffc400';
+            context.strokeRect(x*cellSize,y*cellSize,cellSize,cellSize);
+        }
+        function collision(x,y,array){
+            for(var i=0;i<array.length;i++){
+                if(array[i].x==x && array[i].y==y)
+                return true;
+            }
+            return false;
+        }
+
+        $(document).keydown(function(e){
+            var keyInput=e.which;
+            if (keyInput == "40" && direction != "up") direction = "down";  
+            else if (keyInput == "39" && direction != "left") direction = "right";  
+            else if (keyInput == "38" && direction != "down") direction = "up";  
+            else if (keyInput == "37" && direction != "right") direction = "left";  
+        })
+    })
+        
+
+
+    </script> 
+</body>
+</html>
